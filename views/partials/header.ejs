@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MHRD</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/message.min.css">
+<% if(error && error.length > 0 ) {%>
+<div class="ui negative message">
+  <i class="close icon"></i>
+  <div class="header">
+    <%= error %>
+  </div>
+ </div>
+<%}%>
+<% if(success && success.length > 0) {%>
+  <div class="ui success message">
+    <i class="close icon"></i>
+    <div class="header">
+      <%= success %>
+    </div>
+  </div> <%}%>

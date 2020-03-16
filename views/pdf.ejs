@@ -1,0 +1,48 @@
+<%- include('partials/header.ejs') %>
+<link rel="stylesheet" href="/css/styles.css" />
+ 
+<!-- partial:index.partial.html -->
+<form id="sub" class="sub" action="/pdf" method="post" enctype="multipart/form-data">
+  
+    <h1>Upload PDF</h1>
+    
+    <div class="form-group">
+      <label for="title">Phone<span>Enter your phone number </span></label>
+      <input type="tel"  name="Id" id="title" class="form-controll"  pattern="[0-9]{10}" required/>
+    </div>
+  
+    <div class="form-group">
+      <label for="title">Full Name <span>Enter your full name please</span></label>
+      <input type="text" name="name" id="title" class="form-controll" required/>
+    </div>
+  
+    <div class="form-group file-area">
+          <label for="file">PDF <span>File with only ".pdf" is accepted.</span></label>
+      <input type="file" name="file" id="images" accept="application/pdf" required="required" />
+      <div id="idk" class="file-dummy">
+        <div class="success">Great, your files are selected.</div>
+        <div class="default">Please select some files</div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <button type="submit" class="back-to-article">Upload PDF</button>
+    </div>
+  </form>
+<div id="l" class="h l">
+  <div><p>Please wait... Do not Reload the page.</p></div>
+  <div class="dots">        <div class="dot-falling"></div> </div>    
+</div>
+<link href='https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
+<script>
+  document.querySelector(".back-to-article").addEventListener("click",()=>{
+    var a = document.getElementById("l");
+    var b = document.getElementById("sub");
+    if(document.getElementsByName("Id")!='' && document.getElementsByName("name")!='' && getComputedStyle(document.getElementById("idk")).backgroundColor[5]!='2'){
+      a.classList.remove("h");
+      b.classList.add("h");
+    }
+  });
+</script>
+<%- include('partials/footer.ejs') %>
+   
